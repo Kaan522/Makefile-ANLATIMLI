@@ -26,4 +26,14 @@ re: fclean all   // önce .o uzantıları siler sonra all komutuna gidip tekrard
 diyelimki proje klasörünüz olduğu konumda fclean diye bir dosya var ve bunu phony e bildirmediniz derleme çalışırken tahminimce hata olacaktır 
 phony çakışma olmaması için eğer içerde fonksiyon isminde olan bir klasörünüz varsa ya ismini değiştirin yada bunu phony e bildirin.
 
+***  MAKEFİLE NASIL DÜZELENMELİ ****
+
+Öncelikle oluşturduğun projenin dizinine girersin Makefile isimli bir FİLE tipinde touch ile bir dosya oluşturursun FİLE ye çok kafa yorma..
+Makefile isimli dosya oluşturduktan sonra içine bu komutları kopyalarsın tabi hangi uzantıları çalıştırmasını istiyorsan ona göre shell find kısmında
+düzenleme yaparsın mesala başı ft_ ile başlayan *.c ile biten dosyaları ara diyebilirsin şu şekilde olur yukarı git ve FILES kısmında gözünde canlandır
+$(shell find . -type f ! -name "ft_*.c")   bu kadar basit şimdi derleme yaparken sadece ft_ ile başlayan ve sonu .c uzantılı dosyaları derler
+son olarak bütün ayarlamaları yukarıda yazılanlara göre yaptıktan sonra terminalde dosya konumunda iken make komutu ile derlemeyi başlatabilirsin..
+
+
+
 **** YORUM SATIRLARINI SİLMEYİ UNUTMA *****
